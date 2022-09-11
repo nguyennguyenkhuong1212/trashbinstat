@@ -34,13 +34,11 @@ const PieChart = () => {
         return(res.feeds[res.feeds.length-1]);
     }
     
-    const labels = ['Recyclable', 'Non-recyclable']
-
     useEffect(() => {
         async function fetchData(){
             const response = await process();
             const temp = {
-                labels: labels,
+                labels: ['Recyclable', 'Non-recyclable'],
                 datasets: [
                   {
                     label: 'Statistics on the amount of two different types of trash',
@@ -63,10 +61,11 @@ const PieChart = () => {
                 height={500}
                 width={500}
                 options={{
-                  maintainAspectRatio: false,
+                  responsive: true,
+                  maintainAspectRatio: true,
                   legend: {
                     labels: {
-                      fontSize: 30,
+                      fontSize: 25,
                     },
                   },
                 }}
