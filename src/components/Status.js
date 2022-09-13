@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 const Status = () => {
-    const [ currentData, setCurrentData ] = useState(0);
+    const [ currentData, setCurrentData ] = useState("...");
     const process = async () => {
         const getData = async (url) => {
             const response = await fetch(url, {
