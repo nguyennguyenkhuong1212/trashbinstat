@@ -40,6 +40,7 @@
 }
 
 header{
+  z-index: 9;
   font-family: 'Montserrat', sans-serif;
   position: absolute;
   left: 0;
@@ -55,6 +56,7 @@ header{
 }
 
 footer{
+  z-index: 9;
   font-family: 'Montserrat', sans-serif;
   position: absolute;
   left: 0;
@@ -77,7 +79,7 @@ div.outside{
   flex-direction: column;
   align-self: center;
   align-items: stretch;
-  padding-top: 10vh;
+  padding-top: 23vh;
   font-size: 2vw;
   font-family: 'Montserrat', sans-serif;
 }
@@ -125,6 +127,7 @@ div.outside .right{
   }
 
   div.outside{
+    padding-top: 10vh;
     font-size: 17px;
   }
 
