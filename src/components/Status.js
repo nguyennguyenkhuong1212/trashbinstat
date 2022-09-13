@@ -22,7 +22,7 @@ const Status = () => {
     useEffect(() => {
         async function fetchData(){
             const response = await process();
-            setStatus1((response.field3 == 1 ? "OPEN" : "CLOSE"));
+            setStatus1((response.field3 == 1 ? "YES" : "NO"));
             setStatus2((response.field4 == 2 ? "YES" : "NO"));
             setStatus3((response.field4 == 0 ? "YES" : "NO"));
         }
@@ -32,7 +32,7 @@ const Status = () => {
     <div className='outside'>
         <div id="status">
           <div className="left">Is Open: </div>
-          <div className="right" style={{color: (status1 == "OPEN" ? 'rgb(38, 221, 200)' : 'rgb(5, 82, 103)')}}>{status1}</div>
+          <div className="right" style={{color: (status1 == "YES" ? 'green' : 'red')}}>{status1}</div>
         </div>
         <div id="status">
           <div className="left">Is Full: </div>
