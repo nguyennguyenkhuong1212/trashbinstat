@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
 
 const Status = () => {
-    const [ currentData, setCurrentData ] = useState("...");
+    const [ status1, setStatus1 ] = useState("...");
+    const [ status2, setStatus2 ] = useState("...");
+    const [ status3, setStatus3 ] = useState("...");
     const process = async () => {
         const getData = async (url) => {
             const response = await fetch(url, {
@@ -20,15 +22,25 @@ const Status = () => {
     useEffect(() => {
         async function fetchData(){
             const response = await process();
-            setCurrentData((response.field3 == 1 ? "OPEN" : "CLOSE"));
+            setStatus1((response.field3 == 1 ? "OPEN" : "CLOSE"));
+            setStatus2((response.field4 == 2 ? "YES" : "NO"));
+            setStatus3((response.field4 == 0 ? "YES" : "NO"));
         }
         fetchData();
     }, []);
   return (
     <div className='outside'>
-        <div id="status1">
+        <div id="status">
           <div className="left">Trashbin's lid status: </div>
-          <div className="right" style={{color: (currentData == "OPEN" ? 'rgb(38, 221, 200)' : 'rgb(5, 82, 103)')}}>{currentData}</div>
+          <div className="right" style={{color: (status1 == "OPEN" ? 'rgb(38, 221, 200)' : 'rgb(5, 82, 103)')}}>{status1}</div>
+        </div>
+        <div id="status">
+          <div className="left">Is Full: </div>
+          <div className="right" style={{color: (status2 == "YES" ? 'green' : 'red')}}>{status2}</div>
+        </div>
+        <div id="status">
+          <div className="left">Is Empty: </div>
+          <div className="right" style={{color: (status3 == "YES" ? 'green' : 'red')}}>{status3}</div>
         </div>
     </div>
   )
