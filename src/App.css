@@ -3,6 +3,10 @@
   text-align: center;
 }
 
+body{
+  overflow: hidden;
+}
+
 .centered{
   position: absolute;
   top: 0;
