@@ -31,7 +31,7 @@ const Status = () => {
   return (
     <div className='outside'>
         <div id="status">
-          <div className="left">Trashbin's lid status: </div>
+          <div className="left">Is Open: </div>
           <div className="right" style={{color: (status1 == "OPEN" ? 'rgb(38, 221, 200)' : 'rgb(5, 82, 103)')}}>{status1}</div>
         </div>
         <div id="status">
