@@ -1,4 +1,5 @@
 import PieChart from './components/PieChart';
+import Status from './components/Status';
 import './App.css';
 import { useEffect } from 'react';
 
@@ -11,12 +12,20 @@ function App() {
       <header>
         TRASHBIN 1.0
       </header>
-      <div id="container">
-          <div id="chartLabel">
-              Statistics
-          </div>
-          <PieChart />
-      </div> 
+      <div className='centered'>
+        <div className="container" id="stat">
+            <div id="Label">
+                Statistics
+            </div>
+            <PieChart />
+        </div> 
+        <div className="container" id="stt">
+            <div id="Label">
+                Status
+            </div>
+            <Status />
+        </div> 
+      </div>
       <footer>
         Money Heist &copy; 2022
       </footer>

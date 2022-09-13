@@ -3,22 +3,29 @@
   text-align: center;
 }
 
-#container{
-  background-color: rgba(128, 128, 128, 0.193);
-  border-radius: 12px;
-  display: block;
+.centered{
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  width: 500px;
-  height: fit-content;
-  padding: 18px;
+  display: flex;
   margin: auto;
+  justify-content: space-between;
 }
 
-#chartLabel{
+.container{
+  background-color: rgba(128, 128, 128, 0.193);
+  border-radius: 12px;
+  display: block;
+  width: 500px;
+  height: 542.4px;
+  padding: 18px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#Label{
   margin-bottom: 20px;
   font-size: 18px;
   font-family: 'Montserrat', sans-serif;
@@ -27,7 +34,7 @@
   text-underline-position: under;
 }
 
-#chartLabel:hover{
+#Label:hover{
   text-decoration: none;
   cursor: pointer;
 }
@@ -64,8 +71,64 @@ canvas{
   height: 100px;
 }
 
-@media only screen and (max-width: 640px){
-  #container{
-    width: 280px;
+div.outside{
+  display: flex;
+  height: 85%;
+  flex-direction: column;
+  align-items: stretch;
+  padding-top: 3vh;
+  font-size: 2vw;
+  font-family: 'Montserrat', sans-serif;
+}
+
+div.outside #status1{
+  display: flex;
+  justify-content: space-between;
+}
+
+div.outside .left{
+  text-align: left;
+}
+
+div.outside .right{
+  text-align: right;
+}
+
+#stat{
+  margin-left: 10vw;
+}
+
+#stt{
+  margin-right: 10vw;
+}
+
+@media only screen and (max-width: 1400px){
+  .container{
+    width: 250px;
+    height: 275px;
+  }
+
+  .container #Label{
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .centered{
+    height: 640px;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  div.outside{
+    font-size: 17px;
+  }
+
+  #stat{
+    margin: auto;
+  }
+
+  #stt{
+    margin: auto;
   }
 }
