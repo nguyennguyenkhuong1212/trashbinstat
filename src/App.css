@@ -81,14 +81,15 @@ div.outside{
   display: flex;
   height: 85%;
   flex-direction: column;
+  justify-content: center;
   align-self: center;
   align-items: stretch;
-  padding-top: 23vh;
   font-size: 2vw;
   font-family: 'Montserrat', sans-serif;
 }
 
 div.outside #status{
+  padding-bottom: 15px;
   display: flex;
   justify-content: space-between;
 }
@@ -131,7 +132,6 @@ div.outside .right{
   }
 
   div.outside{
-    padding-top: 10vh;
     font-size: 17px;
   }
 
