@@ -4,6 +4,8 @@ const Status = () => {
     const [ status1, setStatus1 ] = useState("...");
     const [ status2, setStatus2 ] = useState("...");
     const [ status3, setStatus3 ] = useState("...");
+    const [ status4, setStatus4 ] = useState("...");
+    const [ status5, setStatus5 ] = useState("...");
     const process = async () => {
         const getData = async (url) => {
             const response = await fetch(url, {
@@ -25,6 +27,8 @@ const Status = () => {
             setStatus1((response.field3 == 1 ? "YES" : "NO"));
             setStatus2((response.field4 == 2 ? "YES" : "NO"));
             setStatus3((response.field4 == 0 ? "YES" : "NO"));
+            setStatus4((response.field5 == 2 ? "YES" : "NO"));
+            setStatus5((response.field5 == 0 ? "YES" : "NO"));
         }
         fetchData();
     }, []);
@@ -35,12 +39,20 @@ const Status = () => {
           <div className="right" style={{color: (status1 == "YES" ? 'green' : 'red')}}>{status1}</div>
         </div>
         <div id="status">
-          <div className="left">Is Full: </div>
-          <div className="right" style={{color: (status2 == "YES" ? 'green' : 'red')}}>{status2}</div>
+          <div className="left">Is Full (R / N): </div>
+          <div className="right" style={{color: "black"}}>
+            <div style={{color: (status2 == "YES" ? 'green' : 'red'), "padding-right": "3px"}}>{status2}</div>
+            /
+            <div style={{color: (status4 == "YES" ? 'green' : 'red'), "padding-left": "3px"}}>{status4}</div>
+          </div>
         </div>
         <div id="status">
-          <div className="left">Is Empty: </div>
-          <div className="right" style={{color: (status3 == "YES" ? 'green' : 'red')}}>{status3}</div>
+          <div className="left">Is Empty (R / N): </div>
+          <div className="right" style={{color: "black"}}>
+            <div style={{color: (status3 == "YES" ? 'green' : 'red'), "padding-right": "3px"}}>{status3}</div>
+            /
+            <div style={{color: (status5 == "YES" ? 'green' : 'red'), "padding-left": "3px"}}>{status5}</div>
+          </div>
         </div>
     </div>
   )
